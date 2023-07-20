@@ -23,7 +23,13 @@ You will be prompted with qestions pertaining to how many characters you want yo
 
 
 ## Credits
-Recieved starter code from Rutgers Bootcamp course.
+Recieved starter code from: 
+https://github.com/coding-boot-camp/friendly-parakeet
+
+
+Followed these tutorials on YouTube:
+https://www.youtube.com/watch?v=x4HUaiazDes
+https://www.youtube.com/watch?v=v2jfGo7ztm8
 
 
 
