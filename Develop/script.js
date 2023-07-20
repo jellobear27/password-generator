@@ -4,9 +4,12 @@
 //validate the input
 // generate passward based on criteria
 // display password to the passord input
+
 var characterLength = 20;
 var choiceArr = [];
 
+
+//password choices arrays 
 var numberArr = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var upperCaseArr = [
   "A",
@@ -81,9 +84,7 @@ var specialCharArr = [
   "+",
   "=",
 ];
-
-// Assignment code here
-// Get references to the #generate element
+// generate button variable, references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button
@@ -94,7 +95,7 @@ generateBtn.addEventListener("click", writePassword);
 function writePassword() {
   var correctPrompts = getPrompts(); 
   var passwordText = document.querySelector("#password");
-
+//generate password if promts are correct 
   if (correctPrompts) {
     var newPassword = generatePassword();
     passwordText.value = newPassword;
@@ -103,9 +104,13 @@ function writePassword() {
   }
 }
 
+//generatePassword based on prompts
+  // loop will keep running for as long as character length
+  //password + choice 
 function generatePassword() {
-  //generatePassword based on prompts
-  var password = "";
+   
+
+var password = "";
   for (var i = 0; i < characterLength; i++) {
     var randomIndex = Math.floor(Math.random() * choiceArr.length);
     password = password + choiceArr[randomIndex];
@@ -113,15 +118,15 @@ function generatePassword() {
   return password;
 }
 
-//parseInt converts the string into number form
+
 function getPrompts() {
   choiceArr = [];
-
+//parseInt converts the string into number form
   characterLength = parseInt(
     prompt(
       "How many characters do you want your password to be? (8 - 128  characters"
     )
-  ); //Nan
+  ); //Nan = not a number
 
   if (isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
     alert(
